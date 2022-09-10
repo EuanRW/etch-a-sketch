@@ -4,7 +4,7 @@
 }
 
 * {
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 body,
@@ -112,8 +112,8 @@ html {
 
 #gridContainer {
     margin: 0 0 10px 0;
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
 }
 
 #grid {
