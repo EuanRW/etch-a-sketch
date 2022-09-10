@@ -11,13 +11,49 @@ slider.oninput = function () {
     makeRows(sliderVal, sliderVal);
 };
 
+//CHANGING COLOUR BUTTONS
+let currentColor = "black";
+let randColorState = false;
+
+const blackBtn = document.getElementById("blackBtn");
+blackBtn.addEventListener("click", () => {
+    randColorState = false;
+    currentColor = "black";
+});
+
+const redBtn = document.getElementById("redBtn");
+redBtn.addEventListener("click", () => {
+    randColorState = false;
+    currentColor = "red";
+});
+
+const greenBtn = document.getElementById("greenBtn");
+greenBtn.addEventListener("click", () => {
+    randColorState = false;
+    currentColor = "green";
+});
+
+const blueBtn = document.getElementById("blueBtn");
+blueBtn.addEventListener("click", () => {
+    randColorState = false;
+    currentColor = "blue";
+});
+
+//RANDOM COLOUR GENERATOR
+const randBtn = document.getElementById("randBtn");
+randBtn.addEventListener("click", () => {
+    randColorState = true;
+    currentColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+});
+
 //CLEAR BUTTON
 const clearBtn = document.getElementById("clearBtn");
 
 clearBtn.addEventListener("click", () => {
-    const allCells = document.querySelectorAll(".my-color-class");
-    allCells.forEach(function (el) {
-        el.classList.remove("my-color-class");
+    const allCells = document.querySelectorAll(".grid-item");
+    allCells.forEach((el) => {
+        console.log("Test");
+        el.style.backgroundColor = "transparent";
     });
 });
 
@@ -37,11 +73,16 @@ function makeRows(rows, cols) {
     grid.style.setProperty("--grid-cols", cols);
     for (c = 0; c < rows * cols; c++) {
         let cell = document.createElement("div");
-        // cell.innerText = c + 1;
+        // cell.innerText = c    + 1;
         grid.appendChild(cell).className = "grid-item";
-        cell.addEventListener("mouseover", (e) =>
-            e.target.classList.add("my-color-class")
-        );
+        cell.addEventListener("mouseover", (e) => {
+            if (randColorState == false) {
+                e.target.style["background-color"] = currentColor;
+            } else {
+                e.target.style["background-color"] = currentColor;
+                currentColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            }
+        });
     }
 }
 

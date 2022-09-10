@@ -9,30 +9,36 @@
         <title>Document</title>
     </head>
     <body>
-        <div id="left">
-            <div id="sliderContainer">
-                <input
-                    type="range"
-                    min="8"
-                    max="64"
-                    value="16"
-                    class="slider"
-                    id="myRange"
-                />
-                <p>Value: <span id="sliderValue"></span></p>
-            </div>
-
-            <button id="clearBtn">Clear Canvas</button>
-        </div>
-        <div id="middle">
+        <div id="titleContainer">
             <h1 id="title">Etch a sketch!</h1>
-
-            <div id="gridContainer">
-                <div id="grid"></div>
-            </div>
         </div>
-        <div id="right">
-            <p>Test</p>
+        <div id="contentContainer">
+            <div id="left">
+                <div id="sliderContainer">
+                    <input
+                        type="range"
+                        min="8"
+                        max="64"
+                        value="16"
+                        class="slider"
+                        id="myRange"
+                    />
+                    <p>Value: <span id="sliderValue"></span></p>
+                </div>
+                <button class="btn" id="blackBtn"> <div class="colorSquare" id="blackSquare"></div> Black  </button>
+                <button class="btn" id="redBtn"> <div class="colorSquare" id="redSquare"></div> Red</button>
+                <button class="btn" id="greenBtn"> <div class="colorSquare" id="greenSquare"></div> Green</button>
+                <button class="btn" id="blueBtn"> <div class="colorSquare" id="blueSquare"></div> Blue</button>
+                <button class="btn" id="randBtn"> ❔ Random</button>
+                <button class="btn" id="clearBtn">Clear Canvas</button>
+            </div>
+            <div id="middle">
+                <div id="gridContainer">
+                    <div id="grid"></div>
+                </div>
+            </div>
+            <div id="right">
+            </div>
         </div>
     </body>
     <script src="script.js"></script>
